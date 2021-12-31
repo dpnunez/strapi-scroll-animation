@@ -21,7 +21,6 @@ const Home: NextPage = () => {
 
   const visibleArray = itemsObservers.map((e) => e.isVisible);
   const currentStep = visibleArray.lastIndexOf(true);
-  console.log(currentStep);
 
   return (
     <div>
