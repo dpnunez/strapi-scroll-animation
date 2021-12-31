@@ -11,9 +11,22 @@ const Container = styled(motion.div)`
 	align-items: center;
 	perspective: 1800px;
 
-	img {
-		width: 110%;
+
+	.assets {
+		position: relative;
+
+		.galery-background {
+			width: 110%;
+		}
+
+		.galery-secondary {
+			position: absolute;
+			width: 80%;
+			bottom: -20px
+		}
 	}
+
+	
 `;
 
 export { Container };
