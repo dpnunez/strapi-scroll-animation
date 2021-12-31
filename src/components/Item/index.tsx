@@ -4,14 +4,17 @@ import { Container } from './styles';
 interface SectionProps {
 	title: string,
 	text: string,
-	number: number
+	number: number,
+	itemRef?: any
 }
 
-const Item: FC<SectionProps> = ({ title, text, number }) => {
+const Item: FC<SectionProps> = ({
+  title, text, number, itemRef,
+}) => {
   const side = number % 2;
 
   return (
-    <Container side={!!side}>
+    <Container side={!!side} ref={itemRef}>
       <span>
         Step
         {' '}

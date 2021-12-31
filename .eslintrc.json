@@ -29,6 +29,8 @@
 		"no-param-reassign": 0,
 		"no-tabs": 0,
 		"no-restricted-globals": 0,
-		"react/require-default-props": 0
+		"react/require-default-props": 0,
+		"@next/next/no-img-element": 0
 	}
 }
+

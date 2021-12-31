@@ -23,4 +23,6 @@ const sections: sectionInterface[] = [
 
 ];
 
-export { sections };
+const galeryBackground = 'https://d2zv2ciw0ln4h1.cloudfront.net/uploads/hp-primary-desktop_e0dab1f509.svg';
+
+export { sections, galeryBackground };
