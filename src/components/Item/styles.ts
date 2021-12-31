@@ -1,16 +1,45 @@
 import styled, { css } from 'styled-components';
 
-interface ContainerProps {
-	side: boolean
+interface ContentProps {
+	side: 'left' | 'right'
 }
 
-export const Container = styled.section<ContainerProps>`
+interface ContainerProps extends ContentProps {
+	orientation: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
+	width: 100%;
+	position: relative;
+	.triangle {
+		position: absolute;
+		z-index: -1;
+		width: 40%;
+		top: 0;
+		${({ side }) => (side === 'right' ? css`left: 0` : css`right: 0`)};
+		${({ orientation }) => orientation && css`
+			display: flex;
+			flex-direction: column-reverse;
+		`}
+
+		.triangle-img {
+			${({ orientation }) => orientation && css`transform: rotate(180deg)`}
+		}
+		
+		.dots {
+			width: 100px;
+		}
+	}
+`;
+
+export const Content = styled.section<ContentProps>`
 	width: 45%;
-	height: 100vh;
+	height: 110vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	${({ side }) => (side ? css`margin-left: auto` : css`margin-right: auto`)};
+	${({ side }) => (side === 'right' ? css`margin-left: auto` : css`margin-right: auto`)};
+	position: relative;
 
 	h2 {
 		margin: 2rem 0;
@@ -32,4 +61,6 @@ export const Container = styled.section<ContainerProps>`
 		color: #344b80;
 		font-weight: 500;
 	}
+
+	
 `;
